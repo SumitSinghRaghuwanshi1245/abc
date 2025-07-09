@@ -1,0 +1,73 @@
+*{
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+
+
+body{
+  overflow-x: hidden;
+}
+@keyframes scrollBackAndForth {
+  0% {
+    transform: translateX(0%); /* Start from right */
+  }
+  25% {
+    transform: translateX(-20%); /* Move to left */
+  }
+  50% {
+    transform: translateX(0%); /* Move to left */
+  }
+  75% {
+    transform: translateX(20%); /* Move to left */
+  }
+  100% {
+    transform: translateX(0%); /* Move back to right */
+  }
+}
+
+.scrollingTextContainer {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: linear;
+}
+
+.scrollingText {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollBackAndForth 10s linear infinite;
+  text-align: center;
+}
+
+/* Adjust animation speed and translateX values based on screen size */
+@media (max-width: 768px) {
+  .scrollingText {
+    animation: scrollBackAndForth 5s linear infinite; /* Slower on mobile */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .scrollingText {
+    animation: scrollBackAndForth 12s linear infinite; /* Medium speed for tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .scrollingText {
+    animation: scrollBackAndForth 6s linear infinite; /* Faster on desktops */
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 4px;
+}

@@ -1,0 +1,16 @@
+# Allow all bots to access everything
+User-agent: *
+Disallow:
+
+# Block access to sensitive or unnecessary pages
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /wishlist/
+Disallow: /login/
+Disallow: /signup/
+Disallow: /api/
+Disallow: /private/
+Disallow: /server/
+
+# Sitemap URL for better indexing
+Sitemap: https://yourwebsite.com/sitemap.xml
